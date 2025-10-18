@@ -1,23 +1,28 @@
 package main
 
 import "core:fmt"
-import sw "sliding_window"
-import m "matrix"
+import ll "linked_lists"
 
 main :: proc() {
-    test_nums := []int{-2,1,-3,4,-1,2,1,-5,4}
 
-    max_sum := sw.max_subarray(test_nums) 
-    fmt.println("Max sum:", max_sum)
+    // ll_1
+    n1 := new_clone(ll.ListNode{val=1})
+    n2 := new_clone(ll.ListNode{val=3})
+    n3 := new_clone(ll.ListNode{val=5})
+    n1.next = n2
+    n2.next = n3
 
-    test := [][]int{
-		{1, 2, 3, 4},
-		{5, 6, 7, 8},
-		{9, 10, 11, 12},
-		{13, 14, 15, 16},
-	}
+    // ll_2
+    r1 := new_clone(ll.ListNode{val=2})
+    r2 := new_clone(ll.ListNode{val=4})
+    r3 := new_clone(ll.ListNode{val=4})
+    r1.next = r2
+    r2.next = r3
 
-    res := m.spiral_order(test)
-    fmt.println(res)
+    // sum should be 378
+
+    res := ll.add_two_nums(n1, r1)
+    ll.print_ll(res)
+    // fmt.println(res)
 
 }
