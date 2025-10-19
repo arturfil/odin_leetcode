@@ -1,13 +1,19 @@
 package main
 
 import "core:fmt"
-import s "strings_problems"
+
+import b "binary_trees"
 
 main :: proc() {
 
-    str := "A man, a plan, a canal, Panama"
-    res := s.is_palindrome(str)
+	root := b.TreeNode { val = 2, }
+	left := b.TreeNode { val = 1, }
+	right := b.TreeNode { val = 3, }
 
-    fmt.println(res)
+    root.left = &left
+    root.right = &right
+
+	res := b.is_valid_bst(&root)
+	fmt.println(res)
 
 }
