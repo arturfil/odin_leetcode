@@ -3,7 +3,9 @@ package linked_lists
 
 add_two_nums :: proc(l1: ^ListNode, l2: ^ListNode) -> ^ListNode {
     dummy := new_clone(ListNode{val = 0})
-    current, n1, n2 := dummy, l1, l2 // we have to do this because proc params are immutable
+
+    // we have to do this because proc params are immutable
+    current, n1, n2 := dummy, l1, l2 
     carry := 0
 
     for n1 != nil || n2 != nil || carry > 0 {
